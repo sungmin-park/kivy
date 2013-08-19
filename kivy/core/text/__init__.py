@@ -87,11 +87,13 @@ class LabelBase(object):
 
     _texture_1px = None
 
-    def __init__(self, text='', font_size=12, font_name=DEFAULT_FONT,
+    def __init__(self, text='', font_size=12, font_name=None,
                  bold=False, italic=False, halign='left', valign='bottom',
                  shorten=False, text_size=None, mipmap=False, color=None,
                  line_height=1.0, **kwargs):
 
+        if font_name is None:
+            font_name = DEFAULT_FONT
         options = {'text': text, 'font_size': font_size,
             'font_name': font_name, 'bold': bold, 'italic': italic,
             'halign': halign, 'valign': valign, 'shorten': shorten,
